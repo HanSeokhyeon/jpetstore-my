@@ -16,14 +16,10 @@
 
       <h3>Account List</h3>
 
-      <div id="SearchAccount">
-        <div id="SearchAccountContent" th:if="${!isErrorResponse}">
-          <form th:action="@{/catalog/products}" method="get" th:object="${@productSearchCriteria}">
-            <input name="keywords" size="14" th:value="${@productSearchCriteria.keywords}"/>
-            <input id="searchAccounts" type="submit" value="Search" />
-          </form>
-        </div>
-      </div>
+      <form th:action="@{/catalog/products}" method="get" th:object="${@productSearchCriteria}">
+        <input name="keywords" size="14" th:value="${@productSearchCriteria.keywords}"/>
+        <input id="searchEmails" type="submit" value="Search"/>
+      </form>
 
       <table style="margin: auto">
         <tr>
@@ -38,7 +34,7 @@
         </tr>
         <tr th:each="account : ${accountList}">
           <td>
-              <span th:text="${account.username}"></span>
+            <span th:text="${account.username}"></span>
           </td>
           <td>
             <span th:text="${account.email}"></span>

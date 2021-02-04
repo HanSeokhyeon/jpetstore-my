@@ -23,6 +23,7 @@
            phone
        FROM
            account;
+       WHERE lower(email) like concat('%', #{keyword}, '%')
   </select>
 
 

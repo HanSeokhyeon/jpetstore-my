@@ -26,9 +26,9 @@ public class TestController {
     private final AdminService adminService;
 
     @GetMapping("/data")
-    public Object main(Model model) {
+    public Object main() {
         int count = adminService.getAccountCount();
-        List<Account> accountList = adminService.getAccountList();
+        List<Account> accountList = adminService.getAccountList("");
         Map<String, Object> map = new HashMap<>();
         map.put("count", count);
         map.put("accountList", accountList);
