@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.deleteCookies("JSESSIONID")
 				.permitAll();
 		http.authorizeRequests()
-				.mvcMatchers("/my/**").authenticated()
+				.mvcMatchers("/my/**", "/admin/**").authenticated()
 				.anyRequest().permitAll();
 	}
 
