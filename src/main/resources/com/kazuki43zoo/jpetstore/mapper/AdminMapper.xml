@@ -5,26 +5,26 @@
 <mapper namespace="com.kazuki43zoo.jpetstore.mapper.AdminMapper">
 
   <select id="getAccountCount" resultType="Integer">
-      SELECT COUNT(*) FROM account;
-  </select>
-   <select id="getAccountList" resultType="Account">
-       SELECT
-           userid as username,
-           email,
-           firstname,
-           lastname,
-           status,
-           addr1,
-           addr2,
-           city,
-           state,
-           zip,
-           country,
-           phone
-       FROM
-           account;
-       WHERE lower(email) like concat('%', #{keyword}, '%')
+      SELECT count(*) FROM account a
   </select>
 
+  <select id="getAccountList" resultType="Account">
+      SELECT
+          userid as username,
+          email,
+          firstname,
+          lastname,
+          status,
+          addr1,
+          addr2,
+          city,
+          state,
+          zip,
+          country,
+          phone
+      FROM
+          account a
+      WHERE lower(email) like concat('%', #{keyword}, '%')
+  </select>
 
 </mapper>

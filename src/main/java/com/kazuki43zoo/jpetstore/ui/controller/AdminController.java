@@ -4,6 +4,10 @@ import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AdminService;
 import com.kazuki43zoo.jpetstore.ui.ProductSearchCriteria;
 import lombok.RequiredArgsConstructor;
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> b82dbba14e97090afa306b40b5a6394664611354
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+
+@RequiredArgsConstructor
 @RequestMapping("/admin")
 @Controller
-@RequiredArgsConstructor
 public class AdminController {
 
     private final AdminService adminService;

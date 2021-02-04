@@ -9,7 +9,8 @@ import java.util.List;
 @Mapper
 @CacheNamespace
 public interface AdminMapper {
-    int getAccountCount();
 
-    List<Account> getAccountList(String keyword);
+    public int getAccountCount();
+
+    List<Account> getAccountList(String keywords);
 }
